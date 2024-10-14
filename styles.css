@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: swirl 2s forwards;
+}
+
+.circle-background {
+    position: absolute;
+    background-color: pink;
+    border-radius: 50%;
+    width: 700px; /* Updated width */
+    height: 700px; /* Updated height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1; /* Ensure it is above the image */
+}
+
+.love-letter {
+    color: black;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 36px;
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+#final-image {
+    position: absolute;
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+@keyframes swirl {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes expand {
+    0% {
+        width: 10px;
+        height: 10px;
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        background-color: white;
+    }
+}
